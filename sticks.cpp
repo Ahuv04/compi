@@ -28,5 +28,42 @@ void boost()
 int main()
 {
     boost();
-    
+    ll n;
+    cin>>n;
+    vector<ll> arr;
+    vector<ll> cost;
+    ll temp;
+
+    ll avg=0;
+fr(i,n)
+    {   cin>>temp;
+    arr.pb(temp);}
+fr(i,n)
+    {   cin>>temp;
+    cost.pb(temp);}
+
+    temp=0;
+    fr(i,n)
+    {   avg=avg+arr[i]*cost[i];
+        temp+=cost[i];
+    }
+
+    ll avg1;
+    ll ans=0;
+    ll ans_temp=0;
+    if(avg%temp==0)
+    {   avg/=temp;
+        fr(i,n)
+        {   ans+=abs(avg-arr[i])*cost[i];}
+    }
+    else{
+        avg1=avg/temp+1;
+        avg/=temp;
+        fr(i,n)
+        {   ans+=abs(avg-arr[i])*cost[i];
+            ans_temp+=abs(avg1-arr[i])*cost[i];
+        }
+        ans=min(ans,ans_temp);
+    }
+    cout<<ans<<endl;
 }

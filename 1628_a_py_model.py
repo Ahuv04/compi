@@ -12,7 +12,9 @@ for _ in range(int(input())):
     n = int(input())
     arr = [int(item) for item in input().split()]
     c = Counter(arr)
+    print(c)
     s = set(arr)
+    print(s)
     ans = []
     i=0
     while(i<n):
