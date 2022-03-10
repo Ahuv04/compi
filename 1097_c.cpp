@@ -104,14 +104,6 @@ int main()
             {  
                 m[temp.S]=1;
             }
-            // it = find(v.begin(),v.end(),-1*temp.S);
-            // if(it!=v.end())
-            // {   ans+=1;
-            //     v.erase(it);
-            // }
-            // else{
-            //     v.pb(temp.S);
-            // }
         }
     }
     cout<<ans<<endl;
