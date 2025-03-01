@@ -1,0 +1,40 @@
+// 20. Valid Parentheses
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> curr;
+        for(int i=0;i<s.size();i++)
+        {   if(s[i]=='(')
+            {
+                curr.push('(');
+            }
+            else if(s[i]=='{')
+            {
+                curr.push('{');
+            }
+            else if(s[i]=='[')
+            {
+                curr.push('[');
+            }
+            else if(s[i]==')')
+            {   if(curr.empty() || curr.top()!='('){
+                return false;
+                }
+                curr.pop();
+            }
+            else if(s[i]=='}')
+            {   if(curr.empty() || curr.top()!='{'){
+                return false;
+                }
+                curr.pop();
+            }
+            else
+            {if(curr.empty() || curr.top()!='['){
+                return false;
+                }
+                curr.pop();
+            }
+        }
+        return curr.empty();        
+    }
+};
