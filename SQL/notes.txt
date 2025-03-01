@@ -1,0 +1,21 @@
+General syntax:
+
+1. SELECT 
+select column1, column2
+from table;
+
+2. select distinct
+- for distinct values
+
+3. SELECT COUNT(DISTINCT Country) FROM Customers;
+- for counting
+
+
+nice example:
+SELECT Count(*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+
+-> DistinctCountries is the name when count comes
+-> select count(of all) from given select query
+
+
